@@ -1,1 +1,93 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For You 💖</title>
+
+    <style>
+        body {
+            text-align: center;
+            margin-top: 80px;
+            font-family: Arial;
+            background-color: #fff0f5;
+        }
+
+        #no {
+            position: absolute;
+            transition: 0.2s ease;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #yes {
+            background-color: #ff4d88;
+            color: white;
+        }
+
+        #no {
+            background-color: #666;
+            color: white;
+        }
+
+        h2 {
+            color: #d63384;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("mousemove", function(event) {
+            var noButton = document.getElementById("no");
+
+            var x = event.clientX;
+            var y = event.clientY;
+
+            var buttonX = noButton.offsetLeft;
+            var buttonY = noButton.offsetTop;
+
+            var distance = Math.sqrt(
+                Math.pow(x - buttonX, 2) + Math.pow(y - buttonY, 2)
+            );
+
+            if (distance < 120) {
+                moveButton();
+            }
+        });
+
+        function moveButton() {
+            var noButton = document.getElementById("no");
+
+            var maxX = window.innerWidth - 150;
+            var maxY = window.innerHeight - 100;
+
+            var randomX = Math.random() * maxX;
+            var randomY = Math.random() * maxY;
+
+            noButton.style.left = randomX + "px";
+            noButton.style.top = randomY + "px";
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <h2>Hey Rohit... 💕</h2>
+
+    <h2>Nalini wants to ask you something... 💌</h2>
+
+    <h1>Will you love me forever? 💖</h1>
+
+    <button id="yes" onclick="window.location.href='/love'">Yes 😍</button>
+
+    <button id="no">No 😢</button>
+
+</body>
+</html>
+
